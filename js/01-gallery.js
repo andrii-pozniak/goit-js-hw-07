@@ -9,12 +9,17 @@ imgGalleryCard.insertAdjacentHTML("beforeend", imgGallery);
 function onCreateImgCard(galleryItems) {
     return galleryItems.map(({preview, original, description}) => {
        return `
-       <div>
-            <img class="gallery__image" 
-            src=${preview} 
-            original=${original}
-            alt=${description}/>
-       </div>` ;       
+       <div class="gallery__item">
+         <a class="gallery__link" href="${original}">
+            <img
+            class="gallery__image"
+            src="${preview}"
+            data-source="${original}"
+            alt="${description}"
+            />
+       </a>
+      </div>
+       ` ;       
     }).join("");
     
 };
@@ -22,13 +27,13 @@ function onCreateImgCard(galleryItems) {
 imgGalleryCard.addEventListener(`click`, onImgCardClick);
 
 function onImgCardClick(evn) {
-   const isImgCard = evn.target.classList.contains(`gallery__image`);
+   const isImgCard = evn.target.classList.contains('gallery__image');
    if (!isImgCard) {
     return;
    }
-   const imgEl = evn.target
-   imgEl.src = imgEl.attributes.original.nodeValue;
-    console.log(evn)
-   console.log(imgEl.attributes.original.nodeValue)
+   const imgEl = document.querySelector(`.gallery__link`)
+   // imgEl.href = imgEl.target.dataset.source;
+   //  console.log(evn)
+   console.log(imgEl.dataset.source)
 }
 // console.log(galleryItems);
