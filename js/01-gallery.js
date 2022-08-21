@@ -26,14 +26,17 @@ function onCreateImgCard(galleryItems) {
 // delegation
 imgGalleryCard.addEventListener(`click`, onImgCardClick);
 
+
+
 function onImgCardClick(evn) {
    const isImgCard = evn.target.classList.contains('gallery__image');
+   evn.preventDefault()
    if (!isImgCard) {
     return;
    }
    const imgEl = document.querySelector(`.gallery__link`)
-   // imgEl.href = imgEl.target.dataset.source;
+   imgEl.href = evn.target.dataset.source;
    //  console.log(evn)
-   console.log(imgEl.dataset.source)
+   console.log(imgEl.href)
 }
 // console.log(galleryItems);
