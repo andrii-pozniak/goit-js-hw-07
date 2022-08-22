@@ -15,7 +15,7 @@ function onCreateImgCard(galleryItems) {
             <img
             class="gallery__image"
             src="${preview}"
-            data-source="${original}"
+            
             alt="${description}"
             />
        </a>
@@ -38,13 +38,16 @@ function onImgCardClick(evn) {
    const imgEl = document.querySelector(`.gallery__link`)
    imgEl.href = evn.target.dataset.source;
    
-   const instance = basicLightbox.create(`
-    <img class="modal__image" src="assets/images/image.png" width="800" height="600">
-   `)     
-   instance.show();
+// //    const instance = basicLightbox.create(`
+//     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
+//    `)     
+//    instance.show();
    const modalEl = document.querySelector(`.modal__image`);
    // console.log(basicLightbox_placeholder.src)
-      modalEl.src = evn.target.dataset.source;
-    console.log(modalEl.src)
+    //   modalEl.src = evn.target.dataset.source;
+    // console.log(modalEl.src)
+    let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+    let lightbox = $('.gallery a').simpleLightbox({ /* options */ });
+    console.log
 }
 console.log(galleryItems);
