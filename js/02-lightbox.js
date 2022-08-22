@@ -46,8 +46,11 @@ function onImgCardClick(evn) {
    // console.log(basicLightbox_placeholder.src)
     //   modalEl.src = evn.target.dataset.source;
     // console.log(modalEl.src)
-    let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-    let lightbox = $('.gallery a').simpleLightbox({ /* options */ });
-    console.log
+    let lightbox = new simpleLightbox('.gallery a', { /* options */ });
+    // let lightbox = $('.gallery a').simpleLightbox({ /* options */ });
+    const instance = simpleLightbox.options
+//    instance.show();
+    console.log(simpleLightbox)
+    console.log(instance)
 }
 console.log(galleryItems);
