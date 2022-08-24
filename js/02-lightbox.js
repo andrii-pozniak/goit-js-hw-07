@@ -43,8 +43,8 @@ const isImgCard = evn.target.classList.contains('gallery__image', {
    const modalEl = document.querySelector(`.modal__image`);
    
    
-     new SimpleLightbox(`.gallery__item a`);
-     new SimpleLightbox(`.gallery__item a`, { captionsData: 'alt',captionDelay: 250,});
-
+   let lightbox = new SimpleLightbox(`.gallery__item a`);
+    new SimpleLightbox(`.gallery__item a`, { captionsData: 'alt',captionDelay: 250,});
+   
 //      console.log(new SimpleLightbox)
 }
