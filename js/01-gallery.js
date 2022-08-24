@@ -27,7 +27,9 @@ imgGalleryCard.addEventListener(`click`, onImgCardClick);
 
 
 
+
 function onImgCardClick(evn) {
+   window.addEventListener(`keydown`, onEscKeyPress);
    const isImgCard = evn.target.classList.contains('gallery__image');
    evn.preventDefault()
    if (!isImgCard) {
@@ -38,11 +40,34 @@ function onImgCardClick(evn) {
    
    const instance = basicLightbox.create(`
     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
-   `)     
+   `)   
+
    instance.show();
    const modalEl = document.querySelector(`.modal__image`);
    // console.log(basicLightbox_placeholder.src)
       modalEl.src = evn.target.dataset.source;
-    console.log(modalEl.src)
+   //  console.log(modalEl.src)
+ 
+   function onEscKeyPress(event) {
+   
+      if (event.code == "Escape") {
+         instance.close();
+         console.log(`"${event.code}"`)
+      }
+      return; 
+      
+   }
+   
 }
+// function onEscKeyPress(event) {
+   
+//    if (event.code == "Escape") {
+//       instance.close();
+//       console.log(`"${event.code}"`)
+//    }
+//    return; 
+   
+// }
+// Create button  keydown
+
 // console.log(galleryItems);

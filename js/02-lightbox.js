@@ -26,23 +26,23 @@ function onCreateImgCard(galleryItems) {
 imgGalleryCard.addEventListener(`click`, onImgCardClick);
 
 function onImgCardClick(evn) {
-    console.log("hello")
+    
 const isImgCard = evn.target.classList.contains('gallery__image', {
     
 });
    evn.preventDefault()
-   console.log(isImgCard)
+   
    if (!isImgCard) {
     return;
    }
    const imgEl = document.querySelector(`.gallery__link`)
-   imgEl.href = evn.target.dataset.source;
-
-   
+   imgEl.href = evn.target.dataset.source;  
 
    const modalEl = document.querySelector(`.modal__image`);
    
-   console.log("OK")
+   
      new SimpleLightbox(`.gallery__item a`);
-    
+     new SimpleLightbox(`.gallery__item a`, { captionsData: 'alt',captionDelay: 250,});
+
+//      console.log(new SimpleLightbox)
 }
