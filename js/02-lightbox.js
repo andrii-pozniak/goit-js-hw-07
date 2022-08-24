@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-// import SimpleLightbox from ".simplelightbox"
+
 
 
 const imgGalleryCard = document.querySelector(`.gallery`);

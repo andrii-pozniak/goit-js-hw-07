@@ -44,9 +44,9 @@ function onImgCardClick(evn) {
 
    instance.show();
    const modalEl = document.querySelector(`.modal__image`);
-   // console.log(basicLightbox_placeholder.src)
+   
       modalEl.src = evn.target.dataset.source;
-   //  console.log(modalEl.src)
+  
  
    function onEscKeyPress(event) {
    
@@ -59,15 +59,3 @@ function onImgCardClick(evn) {
    }
    
 }
-// function onEscKeyPress(event) {
-   
-//    if (event.code == "Escape") {
-//       instance.close();
-//       console.log(`"${event.code}"`)
-//    }
-//    return; 
-   
-// }
-// Create button  keydown
-
-// console.log(galleryItems);
