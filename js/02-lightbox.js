@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import SimpleLightbox from ".simplelightbox"
+// import SimpleLightbox from ".simplelightbox"
 
 
 const imgGalleryCard = document.querySelector(`.gallery`);
@@ -43,8 +43,8 @@ const isImgCard = evn.target.classList.contains('gallery__image', {
    const modalEl = document.querySelector(`.modal__image`);
    
    
-   let lightbox = new SimpleLightbox(`.gallery__item a`);
+    new SimpleLightbox(`.gallery__item a`);
     new SimpleLightbox(`.gallery__item a`, { captionsData: 'alt',captionDelay: 250,});
-   
+
 //      console.log(new SimpleLightbox)
 }
