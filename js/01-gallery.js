@@ -26,8 +26,6 @@ function onCreateImgCard(galleryItems) {
 imgGalleryCard.addEventListener(`click`, onImgCardClick);
 
 
-
-
 function onImgCardClick(evn) {
    window.addEventListener(`keydown`, onEscKeyPress);
    const isImgCard = evn.target.classList.contains('gallery__image');
@@ -35,24 +33,19 @@ function onImgCardClick(evn) {
    if (!isImgCard) {
     return;
    }
-   const imgEl = document.querySelector(`.gallery__link`)
-   imgEl.href = evn.target.dataset.source;
-   
+    
    const instance = basicLightbox.create(`
-    <img class="modal__image" src="assets/images/image.png" width="800" height="600">
+    <img class="modal__image" src="${evn.target.dataset.source}" width="800" height="600">
    `)   
 
    instance.show();
-   const modalEl = document.querySelector(`.modal__image`);
-   
-      modalEl.src = evn.target.dataset.source;
-  
- 
+    
    function onEscKeyPress(event) {
    
       if (event.code == "Escape") {
          instance.close();
          console.log(`"${event.code}"`)
+         window.removeEventListener(`keydown`, onEscKeyPress);
       }
       return; 
       
